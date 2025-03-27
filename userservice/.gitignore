@@ -1,0 +1,16 @@
+
+
+
+.env
+/node_modules
+/dist
+
+
+
+echo "# Spot-ify" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/NitinSingh07/Spot-ify.git
+git push -u origin main

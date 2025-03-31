@@ -37,6 +37,16 @@ export const isAuth = async (
     req.user = data;
     next();
   } catch (error) {
-    res.status(403).json({ message: "Please Login" });
+    res.status(403).json({ message: "Please Login." });
   }
 };
+
+
+//multer setup
+import multer from "multer";
+
+const storage = multer.memoryStorage();
+
+const uploadFile = multer({ storage }).single("file");
+
+export default uploadFile;

@@ -2,6 +2,7 @@ import express from "express";
 import doetnv from "dotenv";
 import songRoutes from "./route.js";
 import redis from "redis";
+import cors from "cors";
 doetnv.config();
 
 export const redisClient = redis.createClient({
@@ -22,6 +23,7 @@ redisClient
   });
 
 const app = express();
+app.use(cors());
 
 app.use("/api/v1", songRoutes);
 
